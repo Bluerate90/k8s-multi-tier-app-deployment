@@ -186,3 +186,287 @@ Through this project, I gained deep expertise in:
 - v2.0.0: Add CI/CD pipeline
 
 </details>
+
+# Kubernetes Multi-Tier MySQL & WordPress Application Deployment
+
+## 📋 Project Overview
+
+This project demonstrates the deployment of a multi-tier application (MySQL + WordPress) on Kubernetes with advanced configurations including NFS storage, user roles, ConfigMaps, Secrets, and the Kubernetes Dashboard.
+
+**DevOps Scenario**: A production-ready deployment solution for a tech startup requiring robust container orchestration, persistent storage, and secure configuration management.
+
+## 🎯 Key Features
+
+- **Multi-tier Architecture**: MySQL backend + WordPress frontend
+- **Persistent Storage**: NFS-based storage configuration
+- **Security**: Kubernetes Secrets for sensitive data
+- **Configuration Management**: ConfigMaps for application settings
+- **Service Discovery**: ClusterIP and NodePort services
+- **Dashboard Access**: Kubernetes Dashboard with token authentication
+- **Resource Management**: Namespace isolation and quota limits
+
+## 🏗️ Architecture
+
+```
+┌─────────────────┐         ┌──────────────────┐
+│   WordPress     │────────▶│     MySQL        │
+│   (Frontend)    │         │    (Backend)     │
+│   Port: 30080   │         │    Port: 3306    │
+└─────────────────┘         └──────────────────┘
+         │                           │
+         └───────────┬───────────────┘
+                     │
+              ┌──────▼──────┐
+              │ NFS Storage │
+              │  /mydbdata  │
+              └─────────────┘
+```
+
+## 📁 Repository Structure
+
+```
+kubernetes-mysql-wordpress-deployment/
+│
+├── README.md
+├── SETUP.md
+├── ARCHITECTURE.md
+│
+├── manifests/
+│   ├── namespace.yaml
+│   ├── configmap/
+│   │   └── wordpress-config.yaml
+│   ├── secrets/
+│   │   └── mysql-secret.yaml
+│   ├── storage/
+│   │   ├── pv.yaml
+│   │   └── pvc.yaml
+│   ├── deployments/
+│   │   ├── mysql-deployment.yaml
+│   │   └── wordpress-deployment.yaml
+│   └── services/
+│       ├── mysql-service.yaml
+│       └── wordpress-service.yaml
+│
+├── nfs-setup/
+│   ├── nfs-server-setup.sh
+│   └── nfs-client-setup.sh
+│
+├── dashboard/
+│   ├── dashboard-setup.sh
+│   └── create-admin-user.yaml
+│
+├── scripts/
+│   ├── deploy-all.sh
+│   ├── cleanup.sh
+│   └── verify-deployment.sh
+│
+├── docs/
+│   ├── prerequisites.md
+│   ├── troubleshooting.md
+│   └── screenshots/
+│
+└── .gitignore
+```
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Kubernetes cluster (v1.20+)
+- kubectl configured
+- At least 2 worker nodes
+- Ubuntu/Debian-based nodes (for NFS setup)
+
+### Installation Steps
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/yourusername/kubernetes-mysql-wordpress-deployment.git
+cd kubernetes-mysql-wordpress-deployment
+```
+
+2. **Setup NFS Storage**
+```bash
+# On worker-node-1 (NFS Server)
+cd nfs-setup
+chmod +x nfs-server-setup.sh
+sudo ./nfs-server-setup.sh
+
+# On worker-node-2 (NFS Client)
+chmod +x nfs-client-setup.sh
+sudo ./nfs-client-setup.sh
+```
+
+3. **Deploy the Application**
+```bash
+cd scripts
+chmod +x deploy-all.sh
+./deploy-all.sh
+```
+
+4. **Access the Application**
+```bash
+# Get the worker node IP
+kubectl get nodes -o wide
+
+# Access WordPress at:
+http://<WORKER-NODE-IP>:30080
+```
+
+## 📦 Components
+
+### 1. Storage Layer
+- **NFS Server**: Configured on worker-node-1 at `/mydbdata`
+- **Persistent Volume (PV)**: Kubernetes PV backed by NFS
+- **Persistent Volume Claim (PVC)**: Claimed by MySQL pod
+
+### 2. Database Layer
+- **MySQL 5.6**: Backend database
+- **Secret Management**: Root password stored in Kubernetes Secret
+- **Service**: ClusterIP service for internal communication
+
+### 3. Application Layer
+- **WordPress 4.8-apache**: Frontend application
+- **ConfigMap**: Site title and admin email
+- **Service**: NodePort service (30080) for external access
+
+### 4. Security & Configuration
+- **Secrets**: MySQL root password
+- **ConfigMaps**: WordPress configuration
+- **RBAC**: Dashboard admin user with appropriate permissions
+
+## 🔧 Configuration
+
+### Creating Secrets
+```bash
+kubectl create secret generic mysql-pass \
+  --from-literal=password='YourSecurePassword123!'
+```
+
+### Applying ConfigMaps
+```bash
+kubectl apply -f manifests/configmap/wordpress-config.yaml
+```
+
+## 📊 Verification Commands
+
+```bash
+# Check all pods
+kubectl get pods
+
+# Check services
+kubectl get svc
+
+# Check persistent volumes
+kubectl get pv,pvc
+
+# View WordPress logs
+kubectl logs -l app=wordpress
+
+# View MySQL logs
+kubectl logs -l app=mysql
+```
+
+## 🖥️ Kubernetes Dashboard
+
+### Accessing the Dashboard
+
+1. **Get the token**
+```bash
+kubectl -n kubernetes-dashboard create token admin-user
+```
+
+2. **Start proxy**
+```bash
+kubectl proxy
+```
+
+3. **Access Dashboard**
+```
+http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+```
+
+## 🎓 Skills Demonstrated
+
+- ✅ **Container Orchestration**: Kubernetes deployment and service management
+- ✅ **Storage Management**: NFS configuration and PV/PVC setup
+- ✅ **Security**: Secrets and ConfigMap implementation
+- ✅ **Networking**: Service discovery and NodePort configuration
+- ✅ **Multi-tier Architecture**: Database and application layer separation
+- ✅ **Infrastructure as Code**: Declarative YAML configurations
+- ✅ **Linux Administration**: NFS server setup and permissions
+- ✅ **Monitoring**: Dashboard implementation for cluster visibility
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+**Pods not starting?**
+```bash
+kubectl describe pod <pod-name>
+kubectl logs <pod-name>
+```
+
+**NFS mount issues?**
+```bash
+# On NFS server
+showmount -e
+sudo systemctl status nfs-kernel-server
+
+# On client
+showmount -e <nfs-server-ip>
+```
+
+**Can't access WordPress?**
+```bash
+# Verify service
+kubectl get svc wordpress
+
+# Check node port
+kubectl describe svc wordpress
+```
+
+## 📈 Future Enhancements
+
+- [ ] Implement Ingress controller
+- [ ] Add Horizontal Pod Autoscaling
+- [ ] Implement Helm charts
+- [ ] Add monitoring with Prometheus/Grafana
+- [ ] Implement backup and disaster recovery
+- [ ] Add CI/CD pipeline with Jenkins/GitLab
+- [ ] Implement network policies
+- [ ] Add resource quotas and limits
+
+## 📝 Documentation
+
+- [Detailed Setup Guide](SETUP.md)
+- [Architecture Documentation](ARCHITECTURE.md)
+- [Prerequisites](docs/prerequisites.md)
+- [Troubleshooting Guide](docs/troubleshooting.md)
+
+## 🤝 Contributing
+
+This project is maintained for portfolio purposes. Feel free to fork and adapt for your own use.
+
+## 📄 License
+
+MIT License - See LICENSE file for details
+
+## 👤 Author
+
+**Your Name**
+- LinkedIn: [Your LinkedIn Profile]
+- Email: your.email@example.com
+- Portfolio: [Your Portfolio URL]
+
+## 🙏 Acknowledgments
+
+- Kubernetes documentation
+- MySQL and WordPress communities
+- DevOps best practices from industry leaders
+
+---
+
+⭐ **Star this repository if you found it helpful!**
+
+*Built with ❤️ for demonstrating Kubernetes expertise*
