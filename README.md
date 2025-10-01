@@ -23,6 +23,14 @@ Production-ready Kubernetes deployment of WordPress &amp; MySQL with NFS persist
               │  /mydbdata  │
               └─────────────┘
 ```
+## 🖥️ Demo
+
+### WordPress Frontend
+![WordPress Running](docs/screenshots/wordpress-demo.png)
+
+### Kubernetes Dashboard
+![Kubernetes Dashboard](docs/screenshots/k8s-dashboard.png)
+
 ## 🎯 Project Objectives
 
 This project was created to demonstrate:
