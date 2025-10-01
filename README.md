@@ -157,12 +157,11 @@ http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kube
 ## 📁 Repository Structure
 
 ```text
-
 k8s-multi-tier-app-deployment/
 ├── README.md                          ⭐ Main project documentation
 ├── SETUP.md                           📖 Detailed setup guide
 ├── ARCHITECTURE.md                    🏗️ Architecture documentation
-├── LICENSE                            ⚖️ MIT or Apache 2.0
+├── LICENSE                            ⚖️ MIT LICENSE
 ├── .gitignore                         🚫 Ignore unnecessary files
 │
 ├── manifests/                         📁 All Kubernetes manifests
