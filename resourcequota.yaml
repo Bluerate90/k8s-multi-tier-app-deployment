@@ -1,18 +1,1 @@
-# ============================================
-# File: manifests/resourcequota.yaml (Optional)
-# ============================================
-apiVersion: v1
-kind: ResourceQuota
-metadata:
-  name: wordpress-mysql-quota
-  namespace: wordpress-mysql-app
-spec:
-  hard:
-    requests.cpu: "2"
-    requests.memory: 2Gi
-    limits.cpu: "4"
-    limits.memory: 4Gi
-    persistentvolumeclaims: "5"
-    pods: "10"
 
----
