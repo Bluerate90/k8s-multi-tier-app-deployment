@@ -1,1 +1,8 @@
-namespace.yaml
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: wordpress-mysql-app
+  labels:
+    name: wordpress-mysql-app
+
+---
