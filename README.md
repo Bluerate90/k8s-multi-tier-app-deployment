@@ -14,7 +14,6 @@
 Production-ready Kubernetes deployment of WordPress &amp; MySQL with NFS persistent storage, demonstrating advanced DevOps practices including secrets management, ConfigMaps, resource quotas, and the Kubernetes Dashboard.
 ## 🏗️ Architecture
 ```text
-[
 ┌─────────────────┐         ┌──────────────────┐
 │   WordPress     │────────▶│     MySQL        │
 │   (Frontend)    │         │    (Backend)     │
@@ -28,7 +27,7 @@ Production-ready Kubernetes deployment of WordPress &amp; MySQL with NFS persist
               │  /mydbdata  │
               └─────────────┘
 
-]```
+```
 
 ## 🎯 Project Objectives
 
@@ -62,6 +61,7 @@ This deployment pattern solves common challenges faced by organizations:
 
 ## 📁 Repository Structure
 
+```
 k8s-multi-tier-app-deployment/
 │
 ├── README.md
@@ -102,7 +102,7 @@ k8s-multi-tier-app-deployment/
 │   ├── troubleshooting.md
 │   └── screenshots/
 │
-└── .gitignore
+└── .gitignore```
 
 ## 💼 Skills Demonstrated
 
