@@ -33,6 +33,18 @@ This deployment pattern solves common challenges faced by organizations:
 - **Cost Efficiency**: Resource quotas prevent over-allocation
 - **Maintainability**: Clear documentation reduces operational burden
 
+## 📊 Project Highlights
+
+| Aspect | Details |
+|--------|---------|
+| **Deployment Type** | Multi-tier containerized application |
+| **Technologies** | Kubernetes, Docker, MySQL, WordPress, NFS |
+| **Complexity Level** | Production-ready with HA considerations |
+| **Security** | Secrets, ConfigMaps, RBAC, Network isolation |
+| **Storage** | Persistent volumes with NFS backend |
+| **Monitoring** | Kubernetes Dashboard, Resource quotas |
+| **Documentation** | Comprehensive guides and troubleshooting |
+
 ## 📈 Metrics & Results
 
 - **Deployment Time**: Automated deployment in under 5 minutes
