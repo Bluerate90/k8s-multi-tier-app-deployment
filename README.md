@@ -157,6 +157,51 @@ http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kube
 ## 📁 Repository Structure
 
 ```text
+
+k8s-multi-tier-app-deployment/
+├── README.md                          ⭐ Main project documentation
+├── SETUP.md                           📖 Detailed setup guide
+├── ARCHITECTURE.md                    🏗️ Architecture documentation
+├── LICENSE                            ⚖️ MIT or Apache 2.0
+├── .gitignore                         🚫 Ignore unnecessary files
+│
+├── manifests/                         📁 All Kubernetes manifests
+│   ├── namespace.yaml
+│   ├── configmap/
+│   │   └── wordpress-config.yaml
+│   ├── secrets/
+│   │   └── mysql-secret.yaml.example
+│   ├── storage/
+│   │   ├── pv.yaml
+│   │   └── pvc.yaml
+│   ├── deployments/
+│   │   ├── mysql-deployment.yaml
+│   │   └── wordpress-deployment.yaml
+│   ├── services/
+│   │   ├── mysql-service.yaml
+│   │   └── wordpress-service.yaml
+│   ├── resourcequota.yaml
+│   └── limitrange.yaml
+│
+├── nfs-setup/                         📁 NFS configuration scripts
+│   ├── nfs-server-setup.sh
+│   └── nfs-client-setup.sh
+│
+├── dashboard/                         📁 Dashboard setup
+│   ├── dashboard-setup.sh
+│   └── create-admin-user.yaml
+│
+├── scripts/                           📁 Automation scripts
+│   ├── deploy-all.sh
+│   ├── verify-deployment.sh
+│   └── cleanup.sh
+│
+└── docs/                              📁 Additional documentation
+    ├── prerequisites.md
+    ├── troubleshooting.md
+    └── screenshots
+
+
 k8s-multi-tier-app-deployment/
 │
 ├── README.md
