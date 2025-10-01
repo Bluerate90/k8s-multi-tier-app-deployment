@@ -12,6 +12,19 @@
 ![License](https://img.shields.io/github/license/Bluerate90/k8s-multi-tier-app-deployment)
 
 Production-ready Kubernetes deployment of WordPress &amp; MySQL with NFS persistent storage, demonstrating advanced DevOps practices including secrets management, ConfigMaps, resource quotas, and the Kubernetes Dashboard.
+## 🏗️ Architecture
+┌─────────────────┐         ┌──────────────────┐
+│   WordPress     │────────▶│     MySQL        │
+│   (Frontend)    │         │    (Backend)     │
+│   Port: 30080   │         │    Port: 3306    │
+└─────────────────┘         └──────────────────┘
+         │                           │
+         └───────────┬───────────────┘
+                     │
+              ┌──────▼──────┐
+              │ NFS Storage │
+              │  /mydbdata  │
+              └─────────────┘
 
 
 
@@ -44,6 +57,49 @@ This deployment pattern solves common challenges faced by organizations:
 | **Storage** | Persistent volumes with NFS backend |
 | **Monitoring** | Kubernetes Dashboard, Resource quotas |
 | **Documentation** | Comprehensive guides and troubleshooting |
+
+## 📁 Repository Structure
+k8s-multi-tier-app-deployment/
+│
+├── README.md
+├── SETUP.md
+├── ARCHITECTURE.md
+│
+├── manifests/
+│   ├── namespace.yaml
+│   ├── configmap/
+│   │   └── wordpress-config.yaml
+│   ├── secrets/
+│   │   └── mysql-secret.yaml
+│   ├── storage/
+│   │   ├── pv.yaml
+│   │   └── pvc.yaml
+│   ├── deployments/
+│   │   ├── mysql-deployment.yaml
+│   │   └── wordpress-deployment.yaml
+│   └── services/
+│       ├── mysql-service.yaml
+│       └── wordpress-service.yaml
+│
+├── nfs-setup/
+│   ├── nfs-server-setup.sh
+│   └── nfs-client-setup.sh
+│
+├── dashboard/
+│   ├── dashboard-setup.sh
+│   └── create-admin-user.yaml
+│
+├── scripts/
+│   ├── deploy-all.sh
+│   ├── cleanup.sh
+│   └── verify-deployment.sh
+│
+├── docs/
+│   ├── prerequisites.md
+│   ├── troubleshooting.md
+│   └── screenshots/
+│
+└── .gitignore
 
 ## 💼 Skills Demonstrated
 
