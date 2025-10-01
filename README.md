@@ -291,6 +291,15 @@ Through this project, I gained deep expertise in:
 - [Prerequisites](docs/prerequisites.md)
 - [Troubleshooting Guide](docs/troubleshooting.md)
 
+## 🤝 Contributing
+
+This project is maintained for portfolio purposes. Feel free to fork and adapt for your own use.
+
+## 👤 Author
+
+**Tibyan**  
+- LinkedIn: [www.linkedin.com/in/tibyan-hussien-1889339a]
+- Email: [tib9051@gmail.com]
 ---
 
 ⭐ **Star this repository if you found it helpful!**
