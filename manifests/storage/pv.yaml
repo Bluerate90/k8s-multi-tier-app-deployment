@@ -1,1 +1,21 @@
-pv.yaml
+# ============================================
+# File: manifests/storage/pv.yaml
+# NOTE: Update the NFS server IP address
+# ============================================
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: mysql-pv
+  labels:
+    type: nfs
+spec:
+  capacity:
+    storage: 5Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    server: <NFS-SERVER-IP>  # Replace with your worker-node-1 IP
+    path: "/mydbdata"
+
+---
