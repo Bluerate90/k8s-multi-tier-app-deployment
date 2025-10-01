@@ -57,7 +57,7 @@ Through this project, I gained deep expertise in:
 ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
-![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/your-repo)
-![GitHub stars](https://img.shields.io/github/stars/yourusername/your-repo)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/your-repo)
-![License](https://img.shields.io/github/license/yourusername/your-repo)
+![GitHub last commit](https://img.shields.io/github/last-commit/Bluerate90/k8s-multi-tier-app-deployment)
+![GitHub stars](https://img.shields.io/github/stars/Bluerate90/k8s-multi-tier-app-deployment)
+![GitHub forks](https://img.shields.io/github/forks/Bluerate90/k8s-multi-tier-app-deployment)
+![License](https://img.shields.io/github/license/Bluerate90/k8s-multi-tier-app-deployment)
