@@ -1,3 +1,6 @@
+# ============================================
+# File: manifests/configmap/wordpress-config.yaml
+# ============================================
 apiVersion: v1
 kind: ConfigMap
 metadata:
