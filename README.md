@@ -59,6 +59,7 @@ This deployment pattern solves common challenges faced by organizations:
 | **Documentation** | Comprehensive guides and troubleshooting |
 
 ## 📁 Repository Structure
+
 k8s-multi-tier-app-deployment/
 │
 ├── README.md
