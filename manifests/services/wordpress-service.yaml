@@ -1,1 +1,22 @@
-wordpress-service.yaml
+# ============================================
+# File: manifests/services/wordpress-service.yaml
+# ============================================
+apiVersion: v1
+kind: Service
+metadata:
+  name: wordpress
+  namespace: wordpress-mysql-app
+  labels:
+    app: wordpress
+spec:
+  type: NodePort
+  selector:
+    app: wordpress
+    tier: frontend
+  ports:
+  - port: 80
+    targetPort: 80
+    nodePort: 30080
+    protocol: TCP
+
+---
