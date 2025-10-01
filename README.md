@@ -5,7 +5,6 @@
 ![WordPress](https://img.shields.io/badge/WordPress-%23117AC9.svg?style=for-the-badge&logo=WordPress&logoColor=white)
 ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-
 ![GitHub last commit](https://img.shields.io/github/last-commit/Bluerate90/k8s-multi-tier-app-deployment)
 ![GitHub stars](https://img.shields.io/github/stars/Bluerate90/k8s-multi-tier-app-deployment)
 ![GitHub forks](https://img.shields.io/github/forks/Bluerate90/k8s-multi-tier-app-deployment)
