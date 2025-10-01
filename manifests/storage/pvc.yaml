@@ -1,1 +1,19 @@
-pv.yaml
+# ============================================
+# File: manifests/storage/pvc.yaml
+# ============================================
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mysql-pvc
+  namespace: wordpress-mysql-app
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 5Gi
+  selector:
+    matchLabels:
+      type: nfs
+
+---
