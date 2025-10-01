@@ -26,6 +26,7 @@ Production-ready Kubernetes deployment of WordPress &amp; MySQL with NFS persist
               │ NFS Storage │
               │  /mydbdata  │
               └─────────────┘
+```
 ## 🎯 Project Objectives
 
 This project was created to demonstrate:
@@ -99,7 +100,8 @@ k8s-multi-tier-app-deployment/
 │   ├── troubleshooting.md
 │   └── screenshots/
 │
-└── .gitignore```
+└── .gitignore
+```
 
 ## 💼 Skills Demonstrated
 
