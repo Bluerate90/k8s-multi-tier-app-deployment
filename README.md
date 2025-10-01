@@ -199,49 +199,6 @@ k8s-multi-tier-app-deployment/
     ├── prerequisites.md
     ├── troubleshooting.md
     └── screenshots
-
-
-k8s-multi-tier-app-deployment/
-│
-├── README.md
-├── SETUP.md
-├── ARCHITECTURE.md
-│
-├── manifests/
-│   ├── namespace.yaml
-│   ├── configmap/
-│   │   └── wordpress-config.yaml
-│   ├── secrets/
-│   │   └── mysql-secret.yaml
-│   ├── storage/
-│   │   ├── pv.yaml
-│   │   └── pvc.yaml
-│   ├── deployments/
-│   │   ├── mysql-deployment.yaml
-│   │   └── wordpress-deployment.yaml
-│   └── services/
-│       ├── mysql-service.yaml
-│       └── wordpress-service.yaml
-│
-├── nfs-setup/
-│   ├── nfs-server-setup.sh
-│   └── nfs-client-setup.sh
-│
-├── dashboard/
-│   ├── dashboard-setup.sh
-│   └── create-admin-user.yaml
-│
-├── scripts/
-│   ├── deploy-all.sh
-│   ├── cleanup.sh
-│   └── verify-deployment.sh
-│
-├── docs/
-│   ├── prerequisites.md
-│   ├── troubleshooting.md
-│   └── screenshots/
-│
-└── .gitignore
 ```
 
 ## 💼 Skills Demonstrated
