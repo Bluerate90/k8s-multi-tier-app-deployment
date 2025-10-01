@@ -171,6 +171,9 @@ Through this project, I gained deep expertise in:
 
 ## 🔄 Version History
 
+<details>
+<summary>Click to expand Version History</summary>
+
 ### v1.0.0 (October 2025)
 - Initial release
 - WordPress 4.8 + MySQL 5.6
@@ -181,3 +184,5 @@ Through this project, I gained deep expertise in:
 - v1.1.0: Add Helm chart
 - v1.2.0: Implement monitoring
 - v2.0.0: Add CI/CD pipeline
+
+</details>
