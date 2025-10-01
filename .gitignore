@@ -1,0 +1,38 @@
+# Kubernetes
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Secrets (never commit actual secrets)
+secrets/
+*.key
+*.crt
+password.txt
+token.txt
+
+# Backup files
+*.bak
+*.backup
+backup-*.sql
+*.tar.gz
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+
+# Generated files
+generated/
+
+# Node modules (if using any tools)
+node_modules/
