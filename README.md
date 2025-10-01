@@ -1,4 +1,4 @@
-# k8s-multi-tier-app-deployment
+# Kubernetes Multi-Tier MySQL & WordPress Application Deployment
 
 ![Kubernetes](https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white)
 ![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
@@ -104,6 +104,102 @@ k8s-multi-tier-app-deployment/
 └── .gitignore
 ```
 
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Kubernetes cluster (v1.20+)
+- kubectl configured
+- At least 2 worker nodes
+- Ubuntu/Debian-based nodes (for NFS setup)
+
+### Installation Steps
+
+1. **Clone the repository**
+```bash
+git clone https://github.com/yourusername/kubernetes-mysql-wordpress-deployment.git
+cd kubernetes-mysql-wordpress-deployment
+```
+
+2. **Setup NFS Storage**
+```bash
+# On worker-node-1 (NFS Server)
+cd nfs-setup
+chmod +x nfs-server-setup.sh
+sudo ./nfs-server-setup.sh
+
+# On worker-node-2 (NFS Client)
+chmod +x nfs-client-setup.sh
+sudo ./nfs-client-setup.sh
+```
+
+3. **Deploy the Application**
+```bash
+cd scripts
+chmod +x deploy-all.sh
+./deploy-all.sh
+```
+
+4. **Access the Application**
+```bash
+# Get the worker node IP
+kubectl get nodes -o wide
+
+# Access WordPress at:
+http://<WORKER-NODE-IP>:30080
+```
+
+## 🔧 Configuration
+
+### Creating Secrets
+```bash
+kubectl create secret generic mysql-pass \
+  --from-literal=password='YourSecurePassword123!'
+```
+
+### Applying ConfigMaps
+```bash
+kubectl apply -f manifests/configmap/wordpress-config.yaml
+```
+
+## 📊 Verification Commands
+
+```bash
+# Check all pods
+kubectl get pods
+
+# Check services
+kubectl get svc
+
+# Check persistent volumes
+kubectl get pv,pvc
+
+# View WordPress logs
+kubectl logs -l app=wordpress
+
+# View MySQL logs
+kubectl logs -l app=mysql
+```
+
+## 🖥️ Kubernetes Dashboard
+
+### Accessing the Dashboard
+
+1. **Get the token**
+```bash
+kubectl -n kubernetes-dashboard create token admin-user
+```
+
+2. **Start proxy**
+```bash
+kubectl proxy
+```
+
+3. **Access Dashboard**
+```
+http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+```
+
 ## 💼 Skills Demonstrated
 
 ### DevOps & Cloud
@@ -186,3 +282,16 @@ Through this project, I gained deep expertise in:
 - v2.0.0: Add CI/CD pipeline
 
 </details>
+
+## 📝 Documentation
+
+- [Detailed Setup Guide](SETUP.md)
+- [Architecture Documentation](ARCHITECTURE.md)
+- [Prerequisites](docs/prerequisites.md)
+- [Troubleshooting Guide](docs/troubleshooting.md)
+
+---
+
+⭐ **Star this repository if you found it helpful!**
+
+*Built with ❤️ for demonstrating Kubernetes expertise*
