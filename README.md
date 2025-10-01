@@ -48,3 +48,16 @@ Through this project, I gained deep expertise in:
 - Linux system administration and NFS configuration
 - Troubleshooting complex distributed systems
 - Technical documentation and knowledge sharing
+
+
+
+![Kubernetes](https://img.shields.io/badge/kubernetes-%23326ce5.svg?style=for-the-badge&logo=kubernetes&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![WordPress](https://img.shields.io/badge/WordPress-%23117AC9.svg?style=for-the-badge&logo=WordPress&logoColor=white)
+![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+
+![GitHub last commit](https://img.shields.io/github/last-commit/yourusername/your-repo)
+![GitHub stars](https://img.shields.io/github/stars/yourusername/your-repo)
+![GitHub forks](https://img.shields.io/github/forks/yourusername/your-repo)
+![License](https://img.shields.io/github/license/yourusername/your-repo)
