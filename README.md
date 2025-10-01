@@ -6,12 +6,13 @@
 ![MySQL](https://img.shields.io/badge/mysql-%2300f.svg?style=for-the-badge&logo=mysql&logoColor=white)
 ![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 
+Production-ready Kubernetes deployment of WordPress &amp; MySQL with NFS persistent storage, demonstrating advanced DevOps practices including secrets management, ConfigMaps, resource quotas, and the Kubernetes Dashboard.
+
 ![GitHub last commit](https://img.shields.io/github/last-commit/Bluerate90/k8s-multi-tier-app-deployment)
 ![GitHub stars](https://img.shields.io/github/stars/Bluerate90/k8s-multi-tier-app-deployment)
 ![GitHub forks](https://img.shields.io/github/forks/Bluerate90/k8s-multi-tier-app-deployment)
 ![License](https://img.shields.io/github/license/Bluerate90/k8s-multi-tier-app-deployment)
 
-Production-ready Kubernetes deployment of WordPress &amp; MySQL with NFS persistent storage, demonstrating advanced DevOps practices including secrets management, ConfigMaps, resource quotas, and the Kubernetes Dashboard.
 ## 🏗️ Architecture
 ```
 ┌─────────────────┐         ┌──────────────────┐
