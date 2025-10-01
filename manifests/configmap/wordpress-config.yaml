@@ -1,1 +1,10 @@
-wordpress-config.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wordpress-config
+  namespace: wordpress-mysql-app
+data:
+  WORDPRESS_SITE_TITLE: "My Blog"
+  WORDPRESS_ADMIN_EMAIL: "admin@example.com"
+
+---
