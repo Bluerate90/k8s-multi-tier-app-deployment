@@ -58,52 +58,6 @@ This deployment pattern solves common challenges faced by organizations:
 | **Monitoring** | Kubernetes Dashboard, Resource quotas |
 | **Documentation** | Comprehensive guides and troubleshooting |
 
-## 📁 Repository Structure
-
-```text
-k8s-multi-tier-app-deployment/
-│
-├── README.md
-├── SETUP.md
-├── ARCHITECTURE.md
-│
-├── manifests/
-│   ├── namespace.yaml
-│   ├── configmap/
-│   │   └── wordpress-config.yaml
-│   ├── secrets/
-│   │   └── mysql-secret.yaml
-│   ├── storage/
-│   │   ├── pv.yaml
-│   │   └── pvc.yaml
-│   ├── deployments/
-│   │   ├── mysql-deployment.yaml
-│   │   └── wordpress-deployment.yaml
-│   └── services/
-│       ├── mysql-service.yaml
-│       └── wordpress-service.yaml
-│
-├── nfs-setup/
-│   ├── nfs-server-setup.sh
-│   └── nfs-client-setup.sh
-│
-├── dashboard/
-│   ├── dashboard-setup.sh
-│   └── create-admin-user.yaml
-│
-├── scripts/
-│   ├── deploy-all.sh
-│   ├── cleanup.sh
-│   └── verify-deployment.sh
-│
-├── docs/
-│   ├── prerequisites.md
-│   ├── troubleshooting.md
-│   └── screenshots/
-│
-└── .gitignore
-```
-
 ## 🚀 Quick Start
 
 ### Prerequisites
@@ -198,6 +152,52 @@ kubectl proxy
 3. **Access Dashboard**
 ```
 http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+```
+
+## 📁 Repository Structure
+
+```text
+k8s-multi-tier-app-deployment/
+│
+├── README.md
+├── SETUP.md
+├── ARCHITECTURE.md
+│
+├── manifests/
+│   ├── namespace.yaml
+│   ├── configmap/
+│   │   └── wordpress-config.yaml
+│   ├── secrets/
+│   │   └── mysql-secret.yaml
+│   ├── storage/
+│   │   ├── pv.yaml
+│   │   └── pvc.yaml
+│   ├── deployments/
+│   │   ├── mysql-deployment.yaml
+│   │   └── wordpress-deployment.yaml
+│   └── services/
+│       ├── mysql-service.yaml
+│       └── wordpress-service.yaml
+│
+├── nfs-setup/
+│   ├── nfs-server-setup.sh
+│   └── nfs-client-setup.sh
+│
+├── dashboard/
+│   ├── dashboard-setup.sh
+│   └── create-admin-user.yaml
+│
+├── scripts/
+│   ├── deploy-all.sh
+│   ├── cleanup.sh
+│   └── verify-deployment.sh
+│
+├── docs/
+│   ├── prerequisites.md
+│   ├── troubleshooting.md
+│   └── screenshots/
+│
+└── .gitignore
 ```
 
 ## 💼 Skills Demonstrated
