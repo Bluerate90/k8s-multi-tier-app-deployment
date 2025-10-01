@@ -8,11 +8,6 @@
 
 Production-ready Kubernetes deployment of WordPress &amp; MySQL with NFS persistent storage, demonstrating advanced DevOps practices including secrets management, ConfigMaps, resource quotas, and the Kubernetes Dashboard.
 
-![GitHub last commit](https://img.shields.io/github/last-commit/Bluerate90/k8s-multi-tier-app-deployment)
-![GitHub stars](https://img.shields.io/github/stars/Bluerate90/k8s-multi-tier-app-deployment)
-![GitHub forks](https://img.shields.io/github/forks/Bluerate90/k8s-multi-tier-app-deployment)
-![License](https://img.shields.io/github/license/Bluerate90/k8s-multi-tier-app-deployment)
-
 ## 🏗️ Architecture
 ```text
 ┌─────────────────┐         ┌──────────────────┐
@@ -57,6 +52,11 @@ This deployment pattern solves common challenges faced by organizations:
 | **Storage** | Persistent volumes with NFS backend |
 | **Monitoring** | Kubernetes Dashboard, Resource quotas |
 | **Documentation** | Comprehensive guides and troubleshooting |
+
+![GitHub last commit](https://img.shields.io/github/last-commit/Bluerate90/k8s-multi-tier-app-deployment)
+![GitHub stars](https://img.shields.io/github/stars/Bluerate90/k8s-multi-tier-app-deployment)
+![GitHub forks](https://img.shields.io/github/forks/Bluerate90/k8s-multi-tier-app-deployment)
+![License](https://img.shields.io/github/license/Bluerate90/k8s-multi-tier-app-deployment)
 
 ## 🚀 Quick Start
 
