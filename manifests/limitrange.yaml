@@ -1,0 +1,23 @@
+# ============================================
+# File: manifests/limitrange.yaml (Optional)
+# ============================================
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: wordpress-mysql-limits
+  namespace: wordpress-mysql-app
+spec:
+  limits:
+  - max:
+      cpu: "1"
+      memory: 1Gi
+    min:
+      cpu: "100m"
+      memory: 128Mi
+    default:
+      cpu: "500m"
+      memory: 512Mi
+    defaultRequest:
+      cpu: "200m"
+      memory: 256Mi
+    type: Container
