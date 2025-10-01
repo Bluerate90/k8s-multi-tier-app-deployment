@@ -14,7 +14,7 @@ Production-ready Kubernetes deployment of WordPress &amp; MySQL with NFS persist
 ![License](https://img.shields.io/github/license/Bluerate90/k8s-multi-tier-app-deployment)
 
 ## 🏗️ Architecture
-```
+```text
 ┌─────────────────┐         ┌──────────────────┐
 │   WordPress     │────────▶│     MySQL        │
 │   (Frontend)    │         │    (Backend)     │
@@ -60,7 +60,7 @@ This deployment pattern solves common challenges faced by organizations:
 
 ## 📁 Repository Structure
 
-```
+```text
 k8s-multi-tier-app-deployment/
 │
 ├── README.md
